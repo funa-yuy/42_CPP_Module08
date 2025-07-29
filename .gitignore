@@ -34,7 +34,8 @@
 #original
 *.pdf
 **/.DS_Store
-*/bin
+*/obj
+.vscode/
 */easyfind
 */Span
 */MutantStack
