@@ -27,8 +27,8 @@ class Span {
 		void addNumber(int value);
 		void addNumber(int pos, const std::vector<int>& values);
 
-		unsigned int	shortestSpan();
-		unsigned int	longestSpan();
+		int	shortestSpan();
+		int	longestSpan();
 
 	private:
 		std::vector<int>	_vec;

@@ -67,7 +67,7 @@ void Span::addNumber(int pos, const std::vector<int>& values) {
  * 格納されているすべての数値間の最短範囲を返す。
  * 格納されている数値が1つもない場合、または1つしかない場合は、例外を投げる。
  */
-unsigned int	Span::shortestSpan() {
+int	Span::shortestSpan() {
 	if (_vec.size() <= 1)
 		throw std::range_error("格納されている数値が2つ未満です");
 	std::vector<int> sorted = _vec;
@@ -85,7 +85,7 @@ unsigned int	Span::shortestSpan() {
  * 格納されているすべての数値間の最長範囲を返す。
  * 格納されている数値が1つもない場合、または1つしかない場合は、例外を投げる。
  */
-unsigned int	Span::longestSpan() {
+int	Span::longestSpan() {
 	if (_vec.size() <= 1)
 		throw std::range_error("格納されている数値が2つ未満です");
 	std::vector<int>::iterator	max = std::max_element(_vec.begin(), _vec.end());
