@@ -31,6 +31,9 @@ MutantStack<T>::~MutantStack() {}
 
 // ↑↑↑ Orthodox Canonical Form --------------------------------------
 
+/*
+ * std::stackの内部コンテナである`container_type型のメンバ変数`c`経由でイテレーターを使用
+ */
 
 template<typename T>
 typename MutantStack<T>::iterator	MutantStack<T>::end() {

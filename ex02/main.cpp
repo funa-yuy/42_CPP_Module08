@@ -62,7 +62,7 @@ int main()
 		mstack.push_back(5);//新しい要素を末尾に追加
 		mstack.push_back(17);
 
-		std::cout << mstack.front() << std::endl;//最後の要素への参照
+		std::cout << mstack.back() << std::endl;//最後の要素への参照
 
 		mstack.pop_back();//最後の要素を削除
 
