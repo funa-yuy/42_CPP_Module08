@@ -3,7 +3,7 @@
 /*
  * デフォルトコンストラクタ
  */
-Span::Span() {};
+Span::Span() {}
 
 
 /*
@@ -11,7 +11,7 @@ Span::Span() {};
  */
 Span::Span(unsigned int n) : _maxSize(n) {
 	_vec.reserve(n);
-};
+}
 
 /*
  * コピーコンストラクタ
@@ -42,14 +42,14 @@ Span::~Span() {}
 // ↑↑↑ Orthodox Canonical Form --------------------------------------
 
 /*
- * 単一の数値を追加
+ * コンテナの最後に、単一の数値を追加
  */
 void Span::addNumber(int value) {
 	if (_vec.size() < _maxSize)
 		_vec.push_back(value);
 	else
 		throw std::range_error("すでに埋まってます");
-};
+}
 
 /*
  * イテレータの範囲を指定して、複数の数値を追加
@@ -60,7 +60,7 @@ void Span::addNumber(int pos, const std::vector<int>& values) {
 	if (_vec.size() + values.size() > _maxSize)
 		throw std::range_error("すでに埋まってます");
 	_vec.insert(_vec.begin() + pos, values.begin(), values.end());
-};
+}
 
 
 /*
@@ -70,7 +70,7 @@ void Span::addNumber(int pos, const std::vector<int>& values) {
 unsigned int	Span::shortestSpan() {
 	if (_vec.size() <= 1)
 		throw std::range_error("格納されている数値が2つ未満です");
-	std::vector<int> sorted= _vec;
+	std::vector<int> sorted = _vec;
 	std::sort(sorted.begin(), sorted.end());
 	int	min_diff = INT_MAX;
 	for (size_t i = 0; i < _vec.size(); i++)
@@ -79,7 +79,7 @@ unsigned int	Span::shortestSpan() {
 			min_diff = sorted[i + 1] - sorted[i];
 	}
 	return (min_diff);
-};
+}
 
 /*
  * 格納されているすべての数値間の最長範囲を返す。
@@ -91,4 +91,4 @@ unsigned int	Span::longestSpan() {
 	std::vector<int>::iterator	max = std::max_element(_vec.begin(), _vec.end());
 	std::vector<int>::iterator	min = std::min_element(_vec.begin(), _vec.end());
 	return (*max - *min);
-};
+}

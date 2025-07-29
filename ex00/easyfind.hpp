@@ -25,6 +25,6 @@ typename T::iterator	easyfind(T arr, int num) {
 	if (result == arr.end())
 		throw std::runtime_error("なかったです");
 	return (result);
-};
+}
 
 #endif
